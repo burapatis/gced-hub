@@ -1,0 +1,36 @@
+# เนื้อหาแนะนำที่แสดงบนหน้าแรก
+
+resources:
+  - title: "แผนการสอน: ความต่างไม่ใช่ความแตกแยก"
+    description: "ชวนผู้เรียนสำรวจความหลากหลายในห้องเรียน และฝึกมองความต่างเป็นจุดแข็งของการอยู่ร่วมกัน"
+    type_label: "แผนการสอน"
+    url: "/classroom/diversity-not-division/"
+  - title: "คู่มือครู: เริ่มต้นสอน GCED ในห้องเรียนไทย"
+    description: "แนวคิด หลักการออกแบบกิจกรรม และข้อควรระวังในการนำ GCED เข้าสู่ห้องเรียนไทย"
+    type_label: "คู่มือครู"
+    url: "/resources/"
+  - title: "Policy Brief: Whole-School Approach เพื่อวัฒนธรรมสันติภาพ"
+    description: "แนวทางขับเคลื่อนทั้งโรงเรียนเพื่อสร้างวัฒนธรรมสันติภาพอย่างยั่งยืน"
+    type_label: "Policy Brief"
+    url: "/policy/whole-school-peace/"
+
+articles:
+  - title: "พลเมืองโลกคืออะไร"
+    description: "บทเรียนสั้นทำความเข้าใจความเป็นพลเมืองโลก เริ่มจากชีวิตประจำวันของเราเอง"
+    url: "/learn/global-citizenship/"
+  - title: "การฟังอย่างลึกซึ้ง"
+    description: "ฝึกฟังเพื่อเข้าใจ ไม่ใช่ฟังเพื่อโต้ตอบ ทักษะพื้นฐานของการอยู่ร่วมกันอย่างสันติ"
+    url: "/learn/deep-listening/"
+  - title: "ความหลากหลายในชีวิตประจำวัน"
+    description: "มองเห็นความหลากหลายรอบตัว และเรียนรู้ที่จะอยู่ร่วมกันด้วยความเคารพ"
+    url: "/learn/everyday-diversity/"
+
+stories:
+  - title: "วงสนทนาที่เปลี่ยนห้องเรียน"
+    description: "เมื่อครูเปิดพื้นที่ให้นักเรียนที่เห็นต่างได้ฟังกันจริง ๆ บรรยากาศห้องเรียนก็ค่อย ๆ เปลี่ยนไป"
+    url: "/stories/school-dialogue/"
+    image: "images/story-school-dialogue.svg"
+  - title: "ชุมชนสองวัฒนธรรม หนึ่งลานกิจกรรม"
+    description: "เรื่องเล่าจากชุมชนที่ใช้กิจกรรมร่วมสร้างความไว้วางใจระหว่างผู้คนต่างความเชื่อ"
+    url: "/stories/community-peace/"
+    image: "images/story-community-peace.svg"

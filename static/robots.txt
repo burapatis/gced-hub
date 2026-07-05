@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap ถูกสร้างอัตโนมัติโดย Hugo
+Sitemap: /sitemap.xml

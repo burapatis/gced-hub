@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  <section class="section-block" aria-labelledby="policy-brief-heading">
+    {{ partial "section-heading.html" (dict "id" "policy-brief-heading" "title" "Policy Brief Library" "subtitle" "สรุปข้อเสนอเชิงนโยบายฉบับกระชับ สำหรับผู้บริหารและผู้นำการศึกษา") }}
+    <div class="card-grid">
+      {{ range .RegularPages.ByDate.Reverse }}
+      <article class="card resource-card">
+        <p class="card-badge">Policy Brief</p>
+        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="card-desc">{{ .Description }}</p>
+        <div class="card-actions">
+          <a class="btn btn-small btn-secondary" href="{{ .RelPermalink }}">อ่าน Policy Brief</a>
+          <button type="button" class="btn btn-small btn-ghost js-download-mock">ดาวน์โหลด (ตัวอย่าง)</button>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

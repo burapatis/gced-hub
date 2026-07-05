@@ -1,0 +1,75 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  <!-- ตัวกรองแผนการสอน (ทำงานฝั่ง client ด้วย JavaScript) -->
+  <form class="filter-bar" id="classroom-filter" aria-label="ตัวกรองแผนการสอน">
+    <div class="filter-field">
+      <label for="filter-grade">ระดับชั้น</label>
+      <select id="filter-grade" data-filter-key="grade">
+        <option value="">ทั้งหมด</option>
+        <option value="ประถมศึกษา">ประถมศึกษา</option>
+        <option value="มัธยมศึกษา">มัธยมศึกษา</option>
+      </select>
+    </div>
+    <div class="filter-field">
+      <label for="filter-duration">ระยะเวลา</label>
+      <select id="filter-duration" data-filter-key="duration">
+        <option value="">ทั้งหมด</option>
+        <option value="1 คาบ">1 คาบ</option>
+        <option value="2 คาบ">2 คาบ</option>
+      </select>
+    </div>
+    <div class="filter-field">
+      <label for="filter-theme">ประเด็น</label>
+      <select id="filter-theme" data-filter-key="theme">
+        <option value="">ทั้งหมด</option>
+        <option value="ความหลากหลาย">ความหลากหลาย</option>
+        <option value="การสื่อสารสันติ">การสื่อสารสันติ</option>
+        <option value="รู้เท่าทันสื่อ">รู้เท่าทันสื่อ</option>
+      </select>
+    </div>
+    <div class="filter-field">
+      <label for="filter-media">ประเภทสื่อ</label>
+      <select id="filter-media" data-filter-key="media">
+        <option value="">ทั้งหมด</option>
+        <option value="แผนการสอน">แผนการสอน</option>
+        <option value="แผนการสอน + ใบงาน">แผนการสอน + ใบงาน</option>
+      </select>
+    </div>
+    <p class="filter-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="card-grid" id="classroom-grid">
+    {{ range .RegularPages.ByDate.Reverse }}
+    <article class="card resource-card js-filter-item"
+             data-grade="{{ .Params.grade }}"
+             data-duration="{{ .Params.duration }}"
+             data-theme="{{ delimit .Params.themes ", " }}"
+             data-media="{{ .Params.resource_type }}">
+      <p class="card-badge">แผนการสอน</p>
+      <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p class="card-desc">{{ .Description }}</p>
+      <ul class="card-tags">
+        <li>ระดับ: {{ .Params.grade }}</li>
+        <li>เวลา: {{ .Params.duration }}</li>
+        <li>ความยาก: {{ .Params.difficulty }}</li>
+      </ul>
+      <div class="card-actions">
+        <a class="btn btn-small btn-secondary" href="{{ .RelPermalink }}">เปิดแผนการสอน</a>
+        <button type="button" class="btn btn-small btn-ghost js-download-mock"
+                aria-label="{{ .Params.download_label }} (ตัวอย่าง ยังไม่เชื่อมไฟล์จริง)">{{ .Params.download_label }}</button>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+  <p class="filter-empty" id="classroom-empty" hidden>ไม่พบแผนการสอนที่ตรงกับตัวกรอง ลองปรับตัวกรองใหม่อีกครั้ง</p>
+</div>
+{{ end }}

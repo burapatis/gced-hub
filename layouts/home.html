@@ -1,0 +1,69 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+
+{{ partial "role-gateway.html" . }}
+
+<section class="section section-ivory" aria-labelledby="about-eiu-heading">
+  <div class="container about-eiu">
+    {{ partial "section-heading.html" (dict "id" "about-eiu-heading" "title" "EIU/GCED คืออะไร" "subtitle" "การศึกษาเพื่อความเข้าใจอันดีระหว่างประเทศ และการศึกษาเพื่อความเป็นพลเมืองโลก") }}
+    <div class="about-eiu-grid">
+      <p>
+        <strong>Education for International Understanding (EIU)</strong> คือแนวทางการศึกษาที่มุ่งสู่การสร้าง
+        <strong>วัฒนธรรมแห่งสันติภาพ</strong> โดยเชื่อมโยงประเด็นสันติภาพ สิทธิมนุษยชน
+        ความหลากหลายทางวัฒนธรรม ความยั่งยืน และความยุติธรรมเข้ากับการเรียนรู้ในชีวิตจริง
+      </p>
+      <p>
+        <strong>Global Citizenship Education (GCED)</strong> ต่อยอดแนวคิดนี้สู่การบ่มเพาะผู้เรียน
+        ให้เข้าใจโลก เคารพความแตกต่าง คิดวิเคราะห์อย่างมีวิจารณญาณ
+        และลงมือทำเพื่อสังคมที่สันติและยั่งยืน ทั้งในระดับตนเอง ชุมชน สังคมไทย และสังคมโลก
+      </p>
+    </div>
+    <p class="section-cta">
+      <a class="btn btn-secondary" href="{{ partial "rel.html" "/about-gced/" }}">อ่านเรื่อง EIU/GCED ฉบับเต็ม</a>
+    </p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="featured-resources-heading">
+  <div class="container">
+    {{ partial "section-heading.html" (dict "id" "featured-resources-heading" "title" "ทรัพยากรแนะนำ" "subtitle" "แผนการสอน คู่มือ และเครื่องมือที่พร้อมนำไปใช้") }}
+    <div class="card-grid">
+      {{ range hugo.Data.featured.resources }}
+        {{ partial "resource-card.html" . }}
+      {{ end }}
+    </div>
+    <p class="section-cta">
+      <a class="btn btn-ghost" href="{{ partial "rel.html" "/resources/" }}">ดูคลังทรัพยากรทั้งหมด</a>
+    </p>
+  </div>
+</section>
+
+<section class="section section-sky" aria-labelledby="featured-articles-heading">
+  <div class="container">
+    {{ partial "section-heading.html" (dict "id" "featured-articles-heading" "title" "บทเรียนและบทความแนะนำ" "subtitle" "เริ่มต้นเรียนรู้ด้วยตนเองจากบทเรียนสั้นที่เข้าใจง่าย") }}
+    <div class="card-grid">
+      {{ range hugo.Data.featured.articles }}
+        {{ partial "article-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="peace-stories-heading">
+  <div class="container">
+    {{ partial "section-heading.html" (dict "id" "peace-stories-heading" "title" "Peace Stories" "subtitle" "เรื่องเล่าจากห้องเรียนและชุมชน ที่แสดงให้เห็นว่าสันติภาพเริ่มได้จากคนตัวเล็ก ๆ") }}
+    <div class="card-grid card-grid-2">
+      {{ range hugo.Data.featured.stories }}
+        {{ partial "story-card.html" . }}
+      {{ end }}
+    </div>
+    <p class="section-cta">
+      <a class="btn btn-ghost" href="{{ partial "rel.html" "/stories/" }}">อ่านเรื่องเล่าทั้งหมด</a>
+    </p>
+  </div>
+</section>
+
+{{ partial "newsletter.html" . }}
+
+{{ end }}

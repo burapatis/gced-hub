@@ -1,0 +1,5 @@
+{{- /* กล่องเน้นข้อความ — พารามิเตอร์: type (info | tip | note), title */ -}}
+<div class="callout callout-{{ .Get "type" | default "info" }}">
+  {{ with .Get "title" }}<p class="callout-title">{{ . }}</p>{{ end }}
+  <div class="callout-body">{{ .Inner | markdownify }}</div>
+</div>

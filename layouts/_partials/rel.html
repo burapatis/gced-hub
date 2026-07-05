@@ -1,0 +1,12 @@
+{{- /* คืนค่า URL ที่รองรับ baseURL แบบมี subpath (เช่น GitHub Pages)
+       ใช้กับลิงก์ภายใน เช่น "/classroom/" — ลิงก์ภายนอก (http...) จะคืนค่าเดิม */ -}}
+{{- $u := . -}}
+{{- $basePath := (urls.Parse site.BaseURL).Path -}}
+{{- if and (ne $basePath "/") (ne $basePath "") (strings.HasPrefix $u $basePath) -}}
+  {{- /* เป็น URL ที่มี base path อยู่แล้ว (เช่นจาก .RelPermalink) — ใช้ได้เลย */ -}}
+{{- else if strings.HasPrefix $u "/" -}}
+  {{- $u = relURL (strings.TrimPrefix "/" $u) -}}
+{{- else if not (or (strings.HasPrefix $u "http") (strings.HasPrefix $u "mailto:") (strings.HasPrefix $u "#")) -}}
+  {{- $u = relURL $u -}}
+{{- end -}}
+{{- return $u -}}

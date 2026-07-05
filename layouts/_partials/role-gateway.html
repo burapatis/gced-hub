@@ -1,0 +1,27 @@
+<section class="role-gateway" aria-labelledby="role-gateway-heading">
+  <div class="container">
+    {{ partial "section-heading.html" (dict "id" "role-gateway-heading" "title" "คุณคือใครในเส้นทางการเรียนรู้นี้" "subtitle" "เลือกบทบาทของคุณ เพื่อไปยังเนื้อหาที่ตรงกับความต้องการมากที่สุด") }}
+    <ul class="role-grid">
+      <li class="role-card role-teacher">
+        <h3>ฉันเป็นครู</h3>
+        <p>แผนการสอน สื่อ ใบงาน กิจกรรม และแนวทางประเมินผลที่นำไปใช้ได้จริงในห้องเรียน</p>
+        <a href="{{ partial "rel.html" "/classroom/" }}" class="role-link">ไปห้องเรียนสันติภาพ<span aria-hidden="true"> →</span></a>
+      </li>
+      <li class="role-card role-learner">
+        <h3>ฉันเป็นผู้เรียน</h3>
+        <p>บทเรียนสั้นเข้าใจง่าย กิจกรรมโต้ตอบ กรณีศึกษา และแบบทดสอบตนเอง</p>
+        <a href="{{ partial "rel.html" "/learn/" }}" class="role-link">ไปเรียนรู้ด้วยตนเอง<span aria-hidden="true"> →</span></a>
+      </li>
+      <li class="role-card role-leader">
+        <h3>ฉันเป็นผู้บริหาร/ผู้นำการศึกษา</h3>
+        <p>ข้อมูลเชิงนโยบาย งานวิจัย แนวทางบูรณาการหลักสูตร และเครื่องมือประเมินระดับโรงเรียน</p>
+        <a href="{{ partial "rel.html" "/policy/" }}" class="role-link">ไปนโยบายและงานวิจัย<span aria-hidden="true"> →</span></a>
+      </li>
+      <li class="role-card role-public">
+        <h3>ฉันเป็นประชาชนผู้สนใจ</h3>
+        <p>บทความ ข่าวสาร อินโฟกราฟิก และความรู้ย่อยง่ายเรื่องการอยู่ร่วมกันอย่างสันติ</p>
+        <a href="{{ partial "rel.html" "/stories/" }}" class="role-link">ไปเรื่องเล่าและกรณีศึกษา<span aria-hidden="true"> →</span></a>
+      </li>
+    </ul>
+  </div>
+</section>

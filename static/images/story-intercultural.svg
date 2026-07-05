@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="ภาพประกอบ: ห้องเรียนหลากวัฒนธรรม เด็ก ๆ ทักทายกันหลายภาษา">
+  <defs><clipPath id="f4"><rect width="320" height="180" rx="14"/></clipPath></defs>
+  <g clip-path="url(#f4)">
+    <rect width="320" height="180" fill="#DCEEFF"/>
+    <!-- แผนที่โลกจาง ๆ พื้นหลัง -->
+    <g fill="#FFFFFF" opacity="0.55">
+      <path d="M36 34q22-14 44-4t10 26q-18 10-38 2t-16-24z"/>
+      <path d="M232 22q26-8 40 6t2 26q-20 8-38-4t-4-28z"/>
+      <path d="M140 132q18-10 34 0t6 22q-16 8-32 0t-8-22z"/>
+    </g>
+    <!-- พื้นห้อง -->
+    <rect y="126" width="320" height="54" fill="#FAF7EF"/>
+    <!-- เด็ก 4 คนหลากวัฒนธรรม -->
+    <g>
+      <circle cx="64" cy="112" r="14" fill="#E76F51"/>
+      <path d="M44 158q0-30 20-30t20 30z" fill="#E76F51"/>
+    </g>
+    <g>
+      <circle cx="128" cy="118" r="14" fill="#D9A441"/>
+      <path d="M108 164q0-30 20-30t20 30z" fill="#D9A441"/>
+      <!-- ฮิญาบ -->
+      <path d="M114 116a14 14 0 0128 0v8h-5v-8a9 9 0 00-18 0v8h-5z" fill="#B98530"/>
+    </g>
+    <g>
+      <circle cx="192" cy="118" r="14" fill="#5FA777"/>
+      <path d="M172 164q0-30 20-30t20 30z" fill="#5FA777"/>
+    </g>
+    <g>
+      <circle cx="256" cy="112" r="14" fill="#1E4E8C"/>
+      <path d="M236 158q0-30 20-30t20 30z" fill="#1E4E8C"/>
+    </g>
+    <!-- มือโบกทักทาย -->
+    <g stroke-linecap="round" fill="none">
+      <path d="M80 122q10-8 12-16" stroke="#E76F51" stroke-width="6"/>
+      <path d="M240 122q-10-8-12-16" stroke="#1E4E8C" stroke-width="6"/>
+    </g>
+    <!-- speech bubbles ทักทายหลายภาษา -->
+    <g font-family="sans-serif" font-weight="bold" text-anchor="middle">
+      <g>
+        <rect x="30" y="52" width="70" height="26" rx="12" fill="#FFFFFF" stroke="#E76F51" stroke-width="2"/>
+        <path d="M56 78l-4 9 12-7z" fill="#FFFFFF" stroke="#E76F51" stroke-width="2" stroke-linejoin="round"/>
+        <text x="65" y="70" font-size="14" fill="#E76F51">สวัสดี</text>
+      </g>
+      <g>
+        <rect x="106" y="40" width="56" height="26" rx="12" fill="#FFFFFF" stroke="#D9A441" stroke-width="2"/>
+        <path d="M128 66l-4 9 12-7z" fill="#FFFFFF" stroke="#D9A441" stroke-width="2" stroke-linejoin="round"/>
+        <text x="134" y="58" font-size="13" fill="#B98530">Salam</text>
+      </g>
+      <g>
+        <rect x="170" y="52" width="50" height="26" rx="12" fill="#FFFFFF" stroke="#5FA777" stroke-width="2"/>
+        <path d="M190 78l-4 9 12-7z" fill="#FFFFFF" stroke="#5FA777" stroke-width="2" stroke-linejoin="round"/>
+        <text x="195" y="70" font-size="13" fill="#5FA777">Hello</text>
+      </g>
+      <g>
+        <rect x="228" y="40" width="62" height="26" rx="12" fill="#FFFFFF" stroke="#1E4E8C" stroke-width="2"/>
+        <path d="M262 66l4 9-12-7z" fill="#FFFFFF" stroke="#1E4E8C" stroke-width="2" stroke-linejoin="round"/>
+        <text x="259" y="58" font-size="13" fill="#1E4E8C">你好</text>
+      </g>
+    </g>
+    <!-- หัวใจกลาง -->
+    <path d="M152 92c0-6 8-8 9-1 1-7 9-5 9 1 0 6-9 11-9 11s-9-5-9-11z" fill="#E76F51"/>
+  </g>
+</svg>

@@ -1,0 +1,5 @@
+{{- /* พารามิเตอร์: id, title, subtitle (ไม่บังคับ) */ -}}
+<div class="section-heading">
+  <h2 {{ with .id }}id="{{ . }}"{{ end }}>{{ .title }}</h2>
+  {{ with .subtitle }}<p class="section-subtitle">{{ . }}</p>{{ end }}
+</div>

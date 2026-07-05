@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="ภาพประกอบ: นักเรียนกล้าส่งเสียงบนเวที และเพื่อน ๆ ยกมือร่วมสนับสนุน">
+  <defs><clipPath id="f3"><rect width="320" height="180" rx="14"/></clipPath></defs>
+  <g clip-path="url(#f3)">
+    <rect width="320" height="180" fill="#FAF7EF"/>
+    <rect width="320" height="104" fill="#DCEEFF"/>
+    <!-- เวทีเล็ก -->
+    <rect x="36" y="118" width="92" height="14" rx="4" fill="#D9A441"/>
+    <rect x="44" y="132" width="76" height="30" fill="#B98530"/>
+    <!-- นักเรียนผู้พูดถือเมกะโฟน -->
+    <g>
+      <circle cx="82" cy="76" r="16" fill="#1E4E8C"/>
+      <path d="M60 118q0-32 22-32t22 32z" fill="#1E4E8C"/>
+      <!-- แขนชูเมกะโฟน -->
+      <path d="M100 96q14-12 22-24" stroke="#1E4E8C" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <g transform="rotate(-18 130 62)">
+        <path d="M118 58h16l16-12v32l-16-12h-16z" fill="#E76F51"/>
+        <rect x="112" y="58" width="8" height="8" rx="2" fill="#263238"/>
+      </g>
+      <!-- คลื่นเสียง -->
+      <g stroke="#D9A441" stroke-width="3.5" fill="none" stroke-linecap="round">
+        <path d="M160 36q8 12 0 26"/>
+        <path d="M172 28q12 18 0 40"/>
+        <path d="M184 20q16 26 0 54"/>
+      </g>
+    </g>
+    <!-- ดาว/ประกายความมั่นใจ -->
+    <path d="M52 34l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z" fill="#D9A441"/>
+    <!-- เพื่อน ๆ ยกมือสนับสนุน -->
+    <g>
+      <circle cx="216" cy="118" r="12" fill="#5FA777"/>
+      <path d="M200 156q0-24 16-24t16 24z" fill="#5FA777"/>
+      <path d="M228 112q8-10 10-18" stroke="#5FA777" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g>
+      <circle cx="258" cy="126" r="12" fill="#E76F51"/>
+      <path d="M242 164q0-24 16-24t16 24z" fill="#E76F51"/>
+      <path d="M248 118q-8-8-10-16" stroke="#E76F51" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <g>
+      <circle cx="296" cy="116" r="12" fill="#263238"/>
+      <path d="M280 154q0-24 16-24t16 24z" fill="#263238"/>
+      <path d="M308 110q8-10 9-18" stroke="#263238" stroke-width="6" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- หัวใจลอยจากผู้ฟัง -->
+    <g fill="#E76F51">
+      <path d="M236 78c0-5 7-7 8-1 1-6 8-4 8 1 0 5-8 9-8 9s-8-4-8-9z"/>
+      <path d="M286 66c0-4 6-6 7-1 1-5 7-3 7 1 0 4-7 8-7 8s-7-4-7-8z" opacity="0.85"/>
+    </g>
+    <!-- พื้น -->
+    <rect y="162" width="320" height="18" fill="#F3EBDD"/>
+  </g>
+</svg>

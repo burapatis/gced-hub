@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  <!-- ค้นหาและกรองทรัพยากร (ทำงานฝั่ง client) -->
+  <form class="filter-bar" id="resource-filter" aria-label="ค้นหาและกรองทรัพยากร">
+    <div class="filter-field filter-search">
+      <label for="resource-search">ค้นหาทรัพยากร</label>
+      <input type="search" id="resource-search" placeholder="เช่น แผนการสอน, ข่าวปลอม, รูบริก">
+    </div>
+    <div class="filter-field">
+      <label for="resource-type">ประเภท</label>
+      <select id="resource-type" data-filter-key="type">
+        <option value="">ทั้งหมด</option>
+        <option value="lesson-plan">แผนการสอน</option>
+        <option value="worksheet">ใบงาน</option>
+        <option value="infographic">อินโฟกราฟิก</option>
+        <option value="teacher-guide">คู่มือครู</option>
+        <option value="rubric">Rubric</option>
+        <option value="policy-brief">Policy Brief</option>
+      </select>
+    </div>
+    <div class="filter-field">
+      <label for="resource-audience">กลุ่มเป้าหมาย</label>
+      <select id="resource-audience" data-filter-key="audience">
+        <option value="">ทั้งหมด</option>
+        <option value="teacher">ครู</option>
+        <option value="learner">ผู้เรียน</option>
+        <option value="leader">ผู้บริหาร</option>
+        <option value="public">ประชาชนทั่วไป</option>
+      </select>
+    </div>
+    <p class="filter-status" role="status" aria-live="polite"></p>
+  </form>
+
+  <div class="card-grid" id="resource-grid">
+    {{ range hugo.Data.resources.items }}
+      {{ partial "resource-card.html" . }}
+    {{ end }}
+  </div>
+
+  <p class="filter-empty" id="resource-empty" hidden>ไม่พบทรัพยากรที่ตรงกับคำค้นหรือตัวกรอง ลองปรับใหม่อีกครั้ง</p>
+</div>
+{{ end }}

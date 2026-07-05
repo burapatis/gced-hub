@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  <div class="card-grid card-grid-2">
+    {{ range .RegularPages.ByDate.Reverse }}
+      {{ partial "story-card.html" (dict
+          "title" .Title
+          "description" .Description
+          "url" .RelPermalink
+          "source" .Params.source
+          "image" .Params.image) }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}

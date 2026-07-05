@@ -1,0 +1,38 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ partial "rel.html" "/" }}">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- สัญลักษณ์กลีบบัว/วงสันติภาพอย่างง่าย -->
+        <svg width="34" height="34" viewBox="0 0 34 34" role="img" aria-hidden="true" focusable="false">
+          <circle cx="17" cy="17" r="15.5" fill="none" stroke="var(--color-gold)" stroke-width="2"/>
+          <path d="M17 7c3.4 3.2 5 6.4 5 9.6 0 3.6-2.2 6.4-5 6.4s-5-2.8-5-6.4C12 13.4 13.6 10.2 17 7z" fill="var(--color-blue)"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-th">เข้าใจโลก เข้าใจคน</span>
+        <span class="brand-en">Global Understanding &amp; Peace Learning Hub</span>
+      </span>
+    </a>
+
+    <button type="button" class="nav-toggle" id="nav-toggle"
+            aria-expanded="false" aria-controls="site-nav" aria-label="เปิด/ปิดเมนู">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-text">เมนู</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="เมนูหลัก">
+      <ul>
+        {{ $current := .RelPermalink }}
+        {{ range hugo.Data.navigation.main }}
+          {{ $url := partial "rel.html" .url }}
+          <li>
+            <a href="{{ $url }}"
+               {{ if eq $current $url }}aria-current="page"{{ end }}>{{ .name }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

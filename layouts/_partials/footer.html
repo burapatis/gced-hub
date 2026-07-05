@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <p class="footer-title">เข้าใจโลก เข้าใจคน</p>
+      <p class="footer-tagline">{{ site.Params.tagline }}</p>
+      <p class="footer-note">แหล่งเรียนรู้ EIU/GCED เพื่อวัฒนธรรมแห่งสันติภาพในบริบทไทย</p>
+    </div>
+
+    <nav class="footer-col" aria-label="เมนูเรียนรู้">
+      <h2 class="footer-heading">เรียนรู้</h2>
+      <ul>
+        {{ range hugo.Data.navigation.footer_learn }}
+        <li><a href="{{ partial "rel.html" .url }}">{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="เมนูมีส่วนร่วม">
+      <h2 class="footer-heading">มีส่วนร่วม</h2>
+      <ul>
+        {{ range hugo.Data.navigation.footer_engage }}
+        <li><a href="{{ partial "rel.html" .url }}">{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="เมนูเกี่ยวกับ">
+      <h2 class="footer-heading">เกี่ยวกับ</h2>
+      <ul>
+        {{ range hugo.Data.navigation.footer_about }}
+        <li><a href="{{ partial "rel.html" .url }}">{{ .name }}</a></li>
+        {{ end }}
+        <li><a href="mailto:{{ site.Params.contactEmail }}">ติดต่อ: {{ site.Params.contactEmail }}</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© {{ now.Year }} เข้าใจโลก เข้าใจคน — Global Understanding &amp; Peace Learning Hub</p>
+    <p>เนื้อหาบนเว็บไซต์จัดทำเพื่อการศึกษา แหล่งอ้างอิงทางวิชาการอยู่ระหว่างการตรวจสอบในขั้นตอน Editorial Review</p>
+  </div>
+</footer>

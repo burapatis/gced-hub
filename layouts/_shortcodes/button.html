@@ -1,0 +1,2 @@
+{{- /* ปุ่มลิงก์ — พารามิเตอร์: url, label, style (primary | secondary | ghost) */ -}}
+<a class="btn btn-{{ .Get "style" | default "primary" }}" href="{{ .Get partial "rel.html" "url" }}">{{ .Get "label" }}</a>

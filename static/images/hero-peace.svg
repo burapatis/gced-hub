@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" role="img" aria-label="ภาพประกอบ: ผู้คนหลากหลายจับมือล้อมรอบโลก มีนกพิราบสันติภาพโบยบิน">
+  <defs>
+    <clipPath id="frame"><rect width="420" height="340" rx="24"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+    <rect width="420" height="340" fill="#DCEEFF"/>
+    <!-- แสงอาทิตย์อ่อน ๆ -->
+    <circle cx="352" cy="52" r="34" fill="#FAF7EF"/>
+    <circle cx="352" cy="52" r="24" fill="#D9A441" opacity="0.9"/>
+    <!-- เมฆ -->
+    <g fill="#FFFFFF" opacity="0.9">
+      <ellipse cx="80" cy="52" rx="34" ry="13"/>
+      <ellipse cx="106" cy="44" rx="24" ry="11"/>
+      <ellipse cx="250" cy="34" rx="26" ry="10"/>
+    </g>
+    <!-- โลก -->
+    <circle cx="210" cy="168" r="86" fill="#1E4E8C"/>
+    <circle cx="210" cy="168" r="86" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="3"/>
+    <!-- แผ่นดินแบบนามธรรม -->
+    <g fill="#5FA777">
+      <path d="M158 128q16-18 38-12t26 22q-4 16-22 18t-32-6q-14-8-10-22z"/>
+      <path d="M236 176q18-8 30 2t8 24q-12 12-28 8t-16-16q-2-12 6-18z"/>
+      <path d="M172 196q12-4 20 4t2 18q-10 8-20 2t-2-24z"/>
+    </g>
+    <!-- เส้นเชื่อมโยงผู้คนบนโลก -->
+    <g stroke="#D9A441" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 8">
+      <path d="M150 120q60-44 122 6"/>
+      <path d="M138 190q70 52 146-14"/>
+    </g>
+    <g fill="#FAF7EF">
+      <circle cx="150" cy="120" r="5"/>
+      <circle cx="272" cy="126" r="5"/>
+      <circle cx="138" cy="190" r="5"/>
+      <circle cx="284" cy="176" r="5"/>
+    </g>
+    <!-- นกพิราบสันติภาพ -->
+    <g transform="translate(284 74)">
+      <path d="M0 18q14-16 34-10-6 4-8 10 14-4 26 4-16 2-22 10t-20 8q-14 0-18-10 4-8 8-12z" fill="#FFFFFF"/>
+      <path d="M8 6q10-10 22-6-10 6-12 16-8-4-10-10z" fill="#FFFFFF"/>
+      <circle cx="5" cy="16" r="1.8" fill="#263238"/>
+      <path d="M-4 19l-7 2 7 3z" fill="#D9A441"/>
+      <!-- กิ่งมะกอก -->
+      <path d="M-6 26q-10 6-18 4" stroke="#5FA777" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <g fill="#5FA777">
+        <ellipse cx="-16" cy="27" rx="4" ry="2" transform="rotate(-24 -16 27)"/>
+        <ellipse cx="-23" cy="29" rx="4" ry="2" transform="rotate(-18 -23 29)"/>
+      </g>
+    </g>
+    <!-- ผู้คนหลากหลายจับมือกันด้านหน้าโลก -->
+    <!-- คนที่ 1 -->
+    <g>
+      <circle cx="92" cy="240" r="16" fill="#E76F51"/>
+      <path d="M68 300q0-34 24-34t24 34z" fill="#E76F51"/>
+      <circle cx="92" cy="240" r="16" fill="#FFFFFF" opacity="0.15"/>
+    </g>
+    <!-- คนที่ 2 -->
+    <g>
+      <circle cx="151" cy="248" r="16" fill="#D9A441"/>
+      <path d="M127 306q0-34 24-34t24 34z" fill="#D9A441"/>
+    </g>
+    <!-- คนที่ 3 (กลาง ชูมือถือใบไม้) -->
+    <g>
+      <circle cx="210" cy="242" r="17" fill="#1E4E8C"/>
+      <path d="M184 304q0-36 26-36t26 36z" fill="#1E4E8C"/>
+    </g>
+    <!-- คนที่ 4 -->
+    <g>
+      <circle cx="269" cy="248" r="16" fill="#5FA777"/>
+      <path d="M245 306q0-34 24-34t24 34z" fill="#5FA777"/>
+    </g>
+    <!-- คนที่ 5 -->
+    <g>
+      <circle cx="328" cy="240" r="16" fill="#263238"/>
+      <path d="M304 300q0-34 24-34t24 34z" fill="#263238"/>
+    </g>
+    <!-- แขนจับมือกันเป็นคลื่นเดียว -->
+    <path d="M104 272q23 16 46 2 23-16 47 0 23 16 47 0 23-14 46 2"
+          stroke="#FAF7EF" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <!-- พื้นดิน -->
+    <path d="M-10 306q110 26 220 12t220-6v40H-10z" fill="#5FA777"/>
+    <path d="M-10 318q120 20 430 2v32H-10z" fill="#4C8F66"/>
+    <!-- หัวใจเล็ก ๆ ลอยขึ้น -->
+    <g fill="#E76F51">
+      <path d="M62 196c0-5 8-7 9-1 1-6 9-4 9 1 0 5-9 10-9 10s-9-5-9-10z"/>
+      <path d="M348 188c0-4 6-6 7-1 1-5 7-3 7 1 0 4-7 8-7 8s-7-4-7-8z" opacity="0.85"/>
+    </g>
+  </g>
+</svg>

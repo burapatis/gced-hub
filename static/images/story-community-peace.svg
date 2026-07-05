@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="ภาพประกอบ: ผู้คนสองวัฒนธรรมแบ่งปันอาหารร่วมกันที่ตลาดนัดในชุมชน">
+  <defs><clipPath id="f2"><rect width="320" height="180" rx="14"/></clipPath></defs>
+  <g clip-path="url(#f2)">
+    <rect width="320" height="180" fill="#DCEEFF"/>
+    <!-- บ้านสองหลังสองสไตล์ -->
+    <g>
+      <rect x="18" y="58" width="64" height="48" fill="#FAF7EF"/>
+      <path d="M12 58l38-26 38 26z" fill="#E76F51"/>
+      <rect x="40" y="78" width="18" height="28" fill="#1E4E8C"/>
+    </g>
+    <g>
+      <rect x="238" y="58" width="64" height="48" fill="#FAF7EF"/>
+      <path d="M232 58h76l-10-24h-56z" fill="#5FA777"/>
+      <path d="M270 34v-12" stroke="#5FA777" stroke-width="4" stroke-linecap="round"/>
+      <rect x="260" y="78" width="18" height="28" fill="#D9A441"/>
+    </g>
+    <!-- ธงราวตลาดนัด -->
+    <path d="M30 26q130 30 260 0" stroke="#1E4E8C" stroke-width="2.5" fill="none"/>
+    <g>
+      <path d="M84 34l7 14 7-11z" fill="#E76F51"/>
+      <path d="M130 41l7 14 7-11z" fill="#D9A441"/>
+      <path d="M176 41l7 14 7-11z" fill="#5FA777"/>
+      <path d="M222 34l7 14 7-11z" fill="#1E4E8C"/>
+    </g>
+    <!-- พื้น -->
+    <rect y="122" width="320" height="58" fill="#F3EBDD"/>
+    <!-- แผงอาหารกลาง -->
+    <rect x="112" y="96" width="96" height="12" rx="4" fill="#D9A441"/>
+    <rect x="120" y="108" width="8" height="34" fill="#B98530"/>
+    <rect x="192" y="108" width="8" height="34" fill="#B98530"/>
+    <!-- อาหารสองวัฒนธรรมบนโต๊ะ -->
+    <g>
+      <ellipse cx="138" cy="94" rx="14" ry="5" fill="#FFFFFF"/>
+      <ellipse cx="138" cy="91" rx="10" ry="4" fill="#E76F51"/>
+      <ellipse cx="182" cy="94" rx="14" ry="5" fill="#FFFFFF"/>
+      <path d="M174 91q8-8 16 0z" fill="#5FA777"/>
+      <circle cx="160" cy="88" r="6" fill="#D9A441"/>
+      <path d="M160 82v-6" stroke="#5FA777" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+    <!-- คนสองฝั่งยื่นจานแลกกัน -->
+    <g>
+      <circle cx="84" cy="118" r="14" fill="#1E4E8C"/>
+      <path d="M64 164q0-30 20-30t20 30z" fill="#1E4E8C"/>
+      <path d="M100 136q14-6 26-2" stroke="#1E4E8C" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse cx="130" cy="132" rx="10" ry="4" fill="#FFFFFF" stroke="#D9A441" stroke-width="2"/>
+    </g>
+    <g>
+      <circle cx="236" cy="118" r="14" fill="#E76F51"/>
+      <path d="M216 164q0-30 20-30t20 30z" fill="#E76F51"/>
+      <path d="M220 136q-14-6-26-2" stroke="#E76F51" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <ellipse cx="190" cy="132" rx="10" ry="4" fill="#FFFFFF" stroke="#5FA777" stroke-width="2"/>
+    </g>
+    <!-- เด็กสองคนเล่นด้วยกัน -->
+    <g>
+      <circle cx="150" cy="152" r="9" fill="#D9A441"/>
+      <path d="M138 176q0-18 12-18t12 18z" fill="#D9A441"/>
+      <circle cx="176" cy="152" r="9" fill="#5FA777"/>
+      <path d="M164 176q0-18 12-18t12 18z" fill="#5FA777"/>
+      <path d="M158 166h12" stroke="#FAF7EF" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <!-- หัวใจกลางภาพ -->
+    <path d="M154 66c0-6 8-8 9-1 1-7 9-5 9 1 0 6-9 11-9 11s-9-5-9-11z" fill="#E76F51"/>
+  </g>
+</svg>

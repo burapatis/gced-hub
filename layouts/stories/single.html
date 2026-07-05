@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<article class="container page-single">
+  <header class="page-header">
+    {{ with .Params.source }}<p class="card-badge badge-green">{{ . }}</p>{{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+    {{ if .Date }}<p class="page-meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time></p>{{ end }}
+  </header>
+  {{ with .Params.image }}
+  <figure class="story-figure" aria-hidden="true">
+    <img src="{{ partial "rel.html" . }}" alt="" width="640" height="360" loading="eager">
+  </figure>
+  {{ end }}
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  <p class="page-back"><a href="{{ partial "rel.html" "/stories/" }}">← กลับไปหน้าเรื่องเล่าทั้งหมด</a></p>
+</article>
+{{ end }}

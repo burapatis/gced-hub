@@ -1,0 +1,50 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-single creator-page">
+  <header class="page-header creator-hero">
+    <h1>เกี่ยวกับผู้จัดทำเว็บไซต์</h1>
+    <p class="page-lede">
+      เว็บไซต์ "เข้าใจโลก เข้าใจคน" จัดทำขึ้นด้วยความตั้งใจที่จะส่งเสริมการเรียนรู้ด้าน EIU/GCED
+      และการสร้างวัฒนธรรมแห่งสันติภาพในบริบทไทย เพื่อให้เกิดประโยชน์ต่อครู ผู้เรียน
+      ผู้บริหารการศึกษา ประชาชนทั่วไป และสังคมโลก
+    </p>
+  </header>
+
+  <!-- Creator Profile Card -->
+  <section class="creator-card" aria-labelledby="creator-card-heading">
+    <h2 id="creator-card-heading" class="visually-hidden">ข้อมูลผู้จัดทำ</h2>
+    <div class="creator-avatar" aria-hidden="true">
+      <svg width="72" height="72" viewBox="0 0 72 72" focusable="false">
+        <circle cx="36" cy="36" r="34" fill="var(--color-sky)"/>
+        <circle cx="36" cy="28" r="12" fill="var(--color-blue)"/>
+        <path d="M14 62c3-13 12-19 22-19s19 6 22 19" fill="var(--color-blue)"/>
+      </svg>
+    </div>
+    <dl class="creator-info">
+      <div><dt>ชื่อ</dt><dd>Boorapatis Ploysuwan</dd></div>
+      <div><dt>บทบาทในเว็บไซต์</dt><dd>ผู้จัดทำและพัฒนาเว็บไซต์</dd></div>
+      <div><dt>ความมุ่งหมาย</dt><dd>ส่งเสริมการเรียนรู้เพื่อความเข้าใจระหว่างผู้คน ความเคารพในความหลากหลาย และการอยู่ร่วมกันอย่างสันติ</dd></div>
+      <div><dt>อีเมลติดต่อ</dt><dd><a href="mailto:{{ site.Params.contactEmail }}">{{ site.Params.contactEmail }}</a></dd></div>
+    </dl>
+  </section>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  <!-- Feedback Section -->
+  <section class="feedback-box" aria-labelledby="feedback-heading">
+    <h2 id="feedback-heading">แจ้งข้อผิดพลาดหรือข้อเสนอแนะ</h2>
+    <p>
+      หากท่านพบข้อผิดพลาด ความคลาดเคลื่อน หรือมีข้อเสนอแนะเพื่อการปรับปรุงเว็บไซต์
+      ผู้จัดทำยินดีน้อมรับทุกความคิดเห็นด้วยความขอบพระคุณ
+    </p>
+    <div class="feedback-actions">
+      <a class="btn btn-primary" href="mailto:{{ site.Params.contactEmail }}">ส่งอีเมลถึงผู้จัดทำ</a>
+      <!-- TODO: Replace # with the actual Google Form URL when available. -->
+      <a class="btn btn-secondary" href="#" aria-describedby="gform-note">แจ้งข้อเสนอแนะผ่าน Google Form</a>
+    </div>
+    <p class="feedback-note" id="gform-note">ลิงก์แบบฟอร์มเสนอแนะ (Google Form): [จะเพิ่มเติมภายหลัง]</p>
+  </section>
+</div>
+{{ end }}

@@ -1,0 +1,92 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-list">
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  <section class="section-block" aria-labelledby="lessons-heading">
+    {{ partial "section-heading.html" (dict "id" "lessons-heading" "title" "บทเรียนสั้น" "subtitle" "อ่านจบใน 10–15 นาที พร้อมคำถามชวนคิดท้ายบท") }}
+    <div class="card-grid">
+      {{ range .RegularPages.ByDate.Reverse }}
+        {{ partial "article-card.html" (dict "title" .Title "description" .Description "url" .RelPermalink) }}
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- Interactive Scenario: สถานการณ์จำลองอย่างง่าย (Vanilla JS) -->
+  <section class="section-block scenario" aria-labelledby="scenario-heading">
+    {{ partial "section-heading.html" (dict "id" "scenario-heading" "title" "สถานการณ์จำลอง: เพื่อนแชร์ข่าวที่ทำให้คนเกลียดกัน" "subtitle" "ลองเลือกการตอบสนอง แล้วดูผลที่ตามมาของแต่ละทางเลือก") }}
+    <div class="scenario-box" id="scenario">
+      <p class="scenario-question" id="scenario-question">
+        เพื่อนสนิทแชร์ข่าวในกลุ่มแชทที่กล่าวหาคนกลุ่มหนึ่งอย่างรุนแรง โดยยังไม่มีหลักฐานชัดเจน
+        เพื่อนหลายคนเริ่มพิมพ์ข้อความต่อว่าอย่างเผ็ดร้อน คุณจะทำอย่างไร
+      </p>
+      <div class="scenario-options" role="group" aria-labelledby="scenario-question">
+        <button type="button" class="scenario-option" data-outcome="react">
+          พิมพ์ต่อว่าตามเพื่อน เพราะข่าวดูน่าเชื่อ
+        </button>
+        <button type="button" class="scenario-option" data-outcome="silent">
+          เงียบไว้ ไม่อยากมีปัญหากับใคร
+        </button>
+        <button type="button" class="scenario-option" data-outcome="check">
+          หยุดก่อน ตรวจสอบแหล่งที่มา แล้วชวนเพื่อนคุยอย่างใจเย็น
+        </button>
+      </div>
+      <div class="scenario-result" id="scenario-result" role="status" aria-live="polite" hidden>
+        <p class="scenario-result-text" id="scenario-result-text"></p>
+        <button type="button" class="btn btn-small btn-ghost" id="scenario-reset">ลองเลือกใหม่</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- แบบทดสอบตนเอง (mockup) -->
+  <section class="section-block quiz" aria-labelledby="quiz-heading">
+    {{ partial "section-heading.html" (dict "id" "quiz-heading" "title" "แบบทดสอบตนเอง (ตัวอย่าง)" "subtitle" "ตรวจสอบความเข้าใจเบื้องต้นเกี่ยวกับ GCED — ผลลัพธ์ไม่ถูกบันทึก") }}
+    <form class="quiz-box" id="quiz">
+      <fieldset>
+        <legend>1. ข้อใดสะท้อนความเป็น "พลเมืองโลก" ได้ตรงที่สุด</legend>
+        <label><input type="radio" name="q1" value="a"> การท่องเที่ยวต่างประเทศให้ได้มากที่สุด</label>
+        <label><input type="radio" name="q1" value="b" data-correct="true"> การตระหนักว่าการกระทำของเราเชื่อมโยงกับผู้คนและโลก และรับผิดชอบต่อส่วนรวม</label>
+        <label><input type="radio" name="q1" value="c"> การพูดภาษาอังกฤษได้คล่อง</label>
+      </fieldset>
+      <fieldset>
+        <legend>2. เมื่อพบข่าวที่กระตุ้นความโกรธอย่างรุนแรง สิ่งแรกที่ควรทำคือข้อใด</legend>
+        <label><input type="radio" name="q2" value="a" data-correct="true"> หยุดก่อนแชร์ แล้วตรวจสอบแหล่งที่มาจากหลายแหล่ง</label>
+        <label><input type="radio" name="q2" value="b"> แชร์ทันทีเพื่อเตือนคนอื่น</label>
+        <label><input type="radio" name="q2" value="c"> พิมพ์แสดงความเห็นตามอารมณ์</label>
+      </fieldset>
+      <fieldset>
+        <legend>3. "การฟังอย่างลึกซึ้ง" หมายถึงข้อใด</legend>
+        <label><input type="radio" name="q3" value="a"> ฟังไปคิดคำโต้แย้งไป</label>
+        <label><input type="radio" name="q3" value="b"> ฟังเฉพาะคนที่เห็นเหมือนเรา</label>
+        <label><input type="radio" name="q3" value="c" data-correct="true"> ฟังเพื่อเข้าใจความรู้สึกและความต้องการของอีกฝ่าย ก่อนตัดสินหรือตอบกลับ</label>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">ตรวจคำตอบ</button>
+      <p class="quiz-result" id="quiz-result" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <!-- Peace Challenge -->
+  <section class="section-block challenge" aria-labelledby="challenge-heading">
+    {{ partial "section-heading.html" (dict "id" "challenge-heading" "title" "Peace Challenge ประจำสัปดาห์" "subtitle" "ภารกิจเล็ก ๆ ที่ทำได้จริงในชีวิตประจำวัน") }}
+    <ol class="challenge-list">
+      <li>ชวนคุยกับคนที่มีมุมมองต่างจากเรา 1 คน โดยตั้งใจฟังให้จบก่อนแสดงความเห็น</li>
+      <li>ก่อนแชร์ข่าว 1 ชิ้น ให้ตรวจสอบแหล่งที่มาอย่างน้อย 2 แหล่ง</li>
+      <li>กล่าวขอบคุณหรือชื่นชมความแตกต่างของเพื่อนร่วมชั้น/เพื่อนร่วมงานอย่างจริงใจ 1 ครั้ง</li>
+    </ol>
+  </section>
+
+  <!-- Reflection Journal Prompt -->
+  <section class="section-block journal" aria-labelledby="journal-heading">
+    {{ partial "section-heading.html" (dict "id" "journal-heading" "title" "บันทึกสะท้อนคิด" "subtitle" "เขียนสั้น ๆ ในสมุดหรือแอปบันทึกส่วนตัวของคุณ") }}
+    <blockquote class="journal-prompt">
+      สัปดาห์นี้ ฉันได้เรียนรู้อะไรเกี่ยวกับ "ความต่าง" ของคนรอบตัว
+      และมีเรื่องใดที่ฉันอยากเข้าใจให้มากขึ้น ก่อนจะตัดสินใครสักคน
+    </blockquote>
+  </section>
+</div>
+{{ end }}

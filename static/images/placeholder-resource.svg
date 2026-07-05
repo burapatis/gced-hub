@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="ภาพประกอบ: เอกสารและสื่อการเรียนรู้">
+  <rect width="320" height="180" rx="16" fill="#FAF7EF"/>
+  <rect x="60" y="34" width="120" height="120" rx="10" fill="#FFFFFF" stroke="#1E4E8C" stroke-width="4"/>
+  <line x1="80" y1="66" x2="160" y2="66" stroke="#D9A441" stroke-width="6" stroke-linecap="round"/>
+  <line x1="80" y1="92" x2="160" y2="92" stroke="#DCEEFF" stroke-width="6" stroke-linecap="round"/>
+  <line x1="80" y1="118" x2="140" y2="118" stroke="#DCEEFF" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="230" cy="94" r="40" fill="#5FA777"/>
+  <path d="M212 94l12 12 24-26" stroke="#FFFFFF" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

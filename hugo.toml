@@ -1,0 +1,40 @@
+# =============================================================
+# เข้าใจโลก เข้าใจคน — Global Understanding & Peace Learning Hub
+# Hugo site configuration
+# =============================================================
+
+baseURL = "https://example.org/"   # จะถูก override อัตโนมัติตอน deploy ด้วย GitHub Actions
+locale = "th"
+defaultContentLanguage = "th"
+title = "เข้าใจโลก เข้าใจคน"
+
+enableRobotsTXT = false            # ใช้ static/robots.txt ที่เตรียมไว้แทน
+timeZone = "Asia/Bangkok"
+
+# ไม่ใช้ระบบ tags/categories ในระยะ MVP
+disableKinds = ["taxonomy", "term"]
+
+# สร้าง sitemap.xml อัตโนมัติ
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[params]
+  siteNameEn = "Global Understanding & Peace Learning Hub"
+  tagline = "เรียนรู้เพื่อเข้าใจโลก เคารพความต่าง และอยู่ร่วมกันอย่างสันติ"
+  description = "ศูนย์กลางแหล่งเรียนรู้และพื้นที่เผยแพร่แนวคิด EIU/GCED เพื่อสร้างวัฒนธรรมแห่งสันติภาพในบริบทสังคมไทย สำหรับครู ผู้เรียน ผู้บริหารการศึกษา และประชาชนทั่วไป"
+  keyMessage = "นำหลักการสากลมาสร้างความหมายแบบไทย และเปลี่ยนความหมายให้เป็นการเรียนรู้และการลงมือทำจริง"
+  contactEmail = "burapatis@gmail.com"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # อนุญาตให้ใช้ HTML ในไฟล์ Markdown (จำเป็นสำหรับ form mockup / checklist)
+      unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+[services]
+  [services.rss]
+    limit = 20

@@ -1,0 +1,7 @@
+{{- /* พารามิเตอร์: title, description, url, date (ไม่บังคับ) */ -}}
+<article class="card article-card">
+  <h3 class="card-title"><a href="{{ partial "rel.html" .url }}">{{ .title }}</a></h3>
+  {{ with .date }}<p class="card-meta"><time datetime="{{ . }}">{{ . }}</time></p>{{ end }}
+  <p class="card-desc">{{ .description }}</p>
+  <a class="card-more" href="{{ partial "rel.html" .url }}">อ่านต่อ<span aria-hidden="true"> →</span></a>
+</article>

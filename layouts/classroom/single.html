@@ -1,0 +1,32 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<article class="container page-single">
+  <header class="page-header">
+    <p class="card-badge">แผนการสอน</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  <dl class="lesson-meta">
+    <div><dt>ระดับชั้น</dt><dd>{{ .Params.grade }}</dd></div>
+    <div><dt>ระยะเวลา</dt><dd>{{ .Params.duration }}</dd></div>
+    <div><dt>กลุ่มสาระ</dt><dd>{{ delimit .Params.subjects ", " }}</dd></div>
+    <div><dt>ประเด็น</dt><dd>{{ delimit .Params.themes ", " }}</dd></div>
+    <div><dt>ประเภทสื่อ</dt><dd>{{ .Params.resource_type }}</dd></div>
+    <div><dt>ระดับความยาก</dt><dd>{{ .Params.difficulty }}</dd></div>
+  </dl>
+
+  <p class="lesson-download">
+    <!-- ปุ่มดาวน์โหลดแบบ mockup: จะเชื่อมไฟล์จริงในขั้นตอนถัดไป -->
+    <button type="button" class="btn btn-primary js-download-mock">{{ .Params.download_label | default "ดาวน์โหลดแผนการสอน (PDF)" }}</button>
+  </p>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  <nav class="page-nav" aria-label="แผนการสอนอื่น">
+    <a class="btn btn-ghost" href="{{ .Parent.RelPermalink }}">← กลับไปห้องเรียนสันติภาพ</a>
+  </nav>
+</article>
+{{ end }}

@@ -1,0 +1,15 @@
+{{- /* พารามิเตอร์: title, description, type_label, url, และ data attributes สำหรับตัวกรอง (ไม่บังคับ) */ -}}
+<article class="card resource-card"
+  {{- with .type }} data-type="{{ . }}"{{ end }}
+  {{- with .audience }} data-audience="{{ . }}"{{ end }}
+  {{- with .level }} data-level="{{ . }}"{{ end }}>
+  <p class="card-badge">{{ .type_label }}</p>
+  <h3 class="card-title"><a href="{{ partial "rel.html" .url }}">{{ .title }}</a></h3>
+  <p class="card-desc">{{ .description }}</p>
+  {{ with .theme }}<p class="card-meta">ประเด็น: {{ . }}</p>{{ end }}
+  <div class="card-actions">
+    <a class="btn btn-small btn-secondary" href="{{ partial "rel.html" .url }}">ดูรายละเอียด</a>
+    <!-- ปุ่มดาวน์โหลดแบบ mockup: จะเชื่อมไฟล์จริงในขั้นตอนถัดไป -->
+    <button type="button" class="btn btn-small btn-ghost js-download-mock" aria-label="ดาวน์โหลด {{ .title }} (ตัวอย่าง ยังไม่เชื่อมไฟล์จริง)">ดาวน์โหลด (ตัวอย่าง)</button>
+  </div>
+</article>

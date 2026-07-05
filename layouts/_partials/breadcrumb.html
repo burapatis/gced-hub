@@ -1,0 +1,13 @@
+{{ if not .IsHome }}
+<nav class="breadcrumb" aria-label="เส้นทางหน้า (breadcrumb)">
+  <div class="container">
+    <ol>
+      <li><a href="{{ partial "rel.html" "/" }}">หน้าแรก</a></li>
+      {{ if and .Parent (not .Parent.IsHome) }}
+      <li><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></li>
+      {{ end }}
+      <li aria-current="page">{{ .Title }}</li>
+    </ol>
+  </div>
+</nav>
+{{ end }}

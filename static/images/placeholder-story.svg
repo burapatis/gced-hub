@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="ภาพประกอบ: บทสนทนาแห่งความเข้าใจ">
+  <rect width="320" height="180" rx="16" fill="#DCEEFF"/>
+  <circle cx="110" cy="86" r="28" fill="#1E4E8C"/>
+  <circle cx="210" cy="86" r="28" fill="#D9A441"/>
+  <path d="M92 140q68 26 136 0" stroke="#5FA777" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <rect x="128" y="36" width="64" height="34" rx="12" fill="#FFFFFF" stroke="#E76F51" stroke-width="3"/>
+  <path d="M152 70l8 12 8-12" fill="#FFFFFF" stroke="#E76F51" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="146" cy="53" r="3.5" fill="#E76F51"/>
+  <circle cx="160" cy="53" r="3.5" fill="#E76F51"/>
+  <circle cx="174" cy="53" r="3.5" fill="#E76F51"/>
+</svg>
