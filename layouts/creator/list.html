@@ -1,14 +1,10 @@
 {{ define "main" }}
 {{ partial "breadcrumb.html" . }}
 <div class="container page-single creator-page">
-  <header class="page-header creator-hero">
-    <h1>เกี่ยวกับผู้จัดทำเว็บไซต์</h1>
-    <p class="page-lede">
-      เว็บไซต์ "เข้าใจโลก เข้าใจคน" จัดทำขึ้นด้วยความตั้งใจที่จะส่งเสริมการเรียนรู้ด้าน EIU/GCED
-      และการสร้างวัฒนธรรมแห่งสันติภาพในบริบทไทย เพื่อให้เกิดประโยชน์ต่อครู ผู้เรียน
-      ผู้บริหารการศึกษา ประชาชนทั่วไป และสังคมโลก
-    </p>
-  </header>
+  {{ partial "page-header.html" (dict
+      "page" .
+      "class" "creator-hero"
+      "lede" "เว็บไซต์ \"เข้าใจโลก เข้าใจคน\" จัดทำขึ้นด้วยความตั้งใจที่จะส่งเสริมการเรียนรู้ด้าน EIU/GCED และการสร้างวัฒนธรรมแห่งสันติภาพในบริบทไทย เพื่อให้เกิดประโยชน์ต่อครู ผู้เรียน ผู้บริหารการศึกษา ประชาชนทั่วไป และสังคมโลก") }}
 
   <!-- Creator Profile Card -->
   <section class="creator-card" aria-labelledby="creator-card-heading">

@@ -1,10 +1,7 @@
 {{ define "main" }}
 {{ partial "breadcrumb.html" . }}
 <div class="container page-list">
-  <header class="page-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
-  </header>
+  {{ partial "page-header.html" . }}
 
   <section class="section-block" aria-labelledby="policy-brief-heading">
     {{ partial "section-heading.html" (dict "id" "policy-brief-heading" "title" "Policy Brief Library" "subtitle" "สรุปข้อเสนอเชิงนโยบายฉบับกระชับ สำหรับผู้บริหารและผู้นำการศึกษา") }}

@@ -1,0 +1,40 @@
+{{- /* หัวข้อหน้ารายการหมวด — รองรับภาพประกอบ section-{slug}.svg */ -}}
+{{- $page := . -}}
+{{- $class := "" -}}
+{{- $lede := "" -}}
+{{- if reflect.IsMap . -}}
+  {{- $page = .page -}}
+  {{- $class = .class | default "" -}}
+  {{- $lede = .lede | default "" -}}
+{{- end -}}
+{{- $img := "" -}}
+{{- $alt := "" -}}
+{{- with $page.Section -}}
+  {{- $imgFile := printf "static/images/section-%s.svg" . -}}
+  {{- if fileExists $imgFile -}}
+    {{- $img = printf "images/section-%s.svg" . -}}
+    {{- $alt = $page.Params.image_alt | default (printf "ภาพประกอบ: %s" $page.Title) -}}
+  {{- end -}}
+{{- end -}}
+<header class="page-header{{ if $class }} {{ $class }}{{ end }}{{ if $img }} page-header--with-art{{ end }}">
+  <div class="page-header-text">
+    <h1>{{ $page.Title }}</h1>
+    {{- if $lede -}}
+    <p class="page-lede">{{ $lede }}</p>
+    {{- else if $page.Description -}}
+    <p class="page-lede">{{ $page.Description }}</p>
+    {{- end -}}
+    {{- if and (not (reflect.IsMap .)) ($page.OutputFormats.Get "rss") (gt (len $page.RegularPages) 0) -}}
+    <p class="rss-subscribe">
+      <a href="{{ ($page.OutputFormats.Get "rss").RelPermalink }}" type="application/rss+xml">
+        <span class="rss-icon" aria-hidden="true">⬤</span> ติดตาม RSS หมวดนี้
+      </a>
+    </p>
+    {{- end -}}
+  </div>
+  {{- if $img -}}
+  <div class="page-header-art">
+    <img src="{{ partial "rel.html" $img }}" alt="{{ $alt }}" width="360" height="220" decoding="async">
+  </div>
+  {{- end -}}
+</header>

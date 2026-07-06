@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
+
+  {{ partial "header.html" . }}
+  {{ partial "accessibility-toolbar.html" . }}
+
+  <main id="main-content" tabindex="-1">
+    <div class="container error-page">
+      <p class="error-code" aria-hidden="true">404</p>
+      <h1>ไม่พบหน้าที่ค้นหา</h1>
+      <p class="error-lede">
+        หน้าที่คุณต้องการอาจถูกย้าย ลบออก หรือพิมพ์ที่อยู่ไม่ถูกต้อง
+        ลองกลับหน้าแรก ค้นหาเนื้อหา หรือเลือกหมวดด้านล่าง
+      </p>
+
+      <div class="error-actions">
+        <a class="btn btn-primary" href="{{ partial "rel.html" "/" }}">กลับหน้าแรก</a>
+        <a class="btn btn-secondary" href="{{ partial "rel.html" "/search/" }}">ค้นหาทั้งเว็บ</a>
+      </div>
+
+      <nav class="error-links" aria-label="หมวดหลักที่อาจสนใจ">
+        <h2 class="error-links-title">หมวดหลักที่อาจสนใจ</h2>
+        <ul>
+          {{ range hugo.Data.navigation.footer_learn }}
+          <li><a href="{{ partial "rel.html" .url }}">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+  {{ partial "footer.html" . }}
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="กลับขึ้นด้านบน" hidden>
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</body>
+</html>

@@ -1,17 +1,29 @@
 <meta charset="utf-8">
+{{ partial "theme-init.html" . }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {{- $pageTitle := .Title -}}
+{{- $is404 := not .File -}}
 {{- if .IsHome -}}
   {{- $pageTitle = printf "%s — %s" site.Title site.Params.siteNameEn -}}
+{{- else if $is404 -}}
+  {{- $pageTitle = printf "ไม่พบหน้าที่ค้นหา | %s" site.Title -}}
 {{- else -}}
   {{- $pageTitle = printf "%s | %s" .Title site.Title -}}
 {{- end -}}
 <title>{{ $pageTitle }}</title>
 
-{{- $desc := .Description | default site.Params.description }}
+{{- $desc := .Description | default site.Params.description -}}
+{{- if $is404 -}}
+  {{- $desc = "หน้าที่คุณค้นหาไม่มีอยู่ในเว็บไซต์ ลองกลับหน้าแรกหรือค้นหาเนื้อหาอื่น" -}}
+{{- end -}}
 <meta name="description" content="{{ $desc }}">
+{{- if $is404 -}}
+<meta name="robots" content="noindex, follow">
+{{- else -}}
 <link rel="canonical" href="{{ .Permalink }}">
+{{ partial "breadcrumb-jsonld.html" . }}
+{{- end -}}
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="{{ site.Title }}">
@@ -34,6 +46,7 @@
 {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
-{{ with .OutputFormats.Get "rss" -}}
-<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ .RelPermalink }}">
-{{- end }}
+{{- $rss := .OutputFormats.Get "rss" -}}
+{{- if $rss -}}
+<link rel="alternate" type="application/rss+xml" title="{{ if $.IsHome }}{{ site.Title }}{{ else }}{{ $.Title }} — {{ site.Title }}{{ end }}" href="{{ $rss.RelPermalink }}">
+{{- end -}}

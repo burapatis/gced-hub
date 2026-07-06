@@ -14,6 +14,17 @@ timeZone = "Asia/Bangkok"
 # ไม่ใช้ระบบ tags/categories ในระยะ MVP
 disableKinds = ["taxonomy", "term"]
 
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[outputFormats.SearchIndex]
+  mediaType = "application/json"
+  baseName = "search-index"
+  isPlainText = true
+  notAlternative = true
+
 # สร้าง sitemap.xml อัตโนมัติ
 [sitemap]
   changefreq = "weekly"

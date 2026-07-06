@@ -1,0 +1,48 @@
+{{- /* RSS ต่อหมวด — คำอธิบายภาษาไทย ใช้ .Description แทนเนื้อหา HTML เต็ม */ -}}
+{{- $limit := 20 -}}
+{{- with site.Config.Services.RSS.Limit -}}
+  {{- $limit = . -}}
+{{- end -}}
+{{- $pages := slice -}}
+{{- $channelTitle := site.Title -}}
+{{- $channelLink := site.Home.Permalink -}}
+{{- $channelDesc := site.Params.description -}}
+
+{{- if .IsHome -}}
+  {{- $pages = site.RegularPages -}}
+{{- else if eq .Kind "section" -}}
+  {{- $pages = .RegularPages -}}
+  {{- $channelTitle = printf "%s — %s" .Title site.Title -}}
+  {{- $channelLink = .Permalink -}}
+  {{- $channelDesc = .Description | default site.Params.description -}}
+{{- end -}}
+
+{{- $pages = $pages.ByDate.Reverse | first $limit -}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ $channelTitle }}</title>
+    <link>{{ $channelLink }}</link>
+    <description>{{ $channelDesc }}</description>
+    <generator>Hugo</generator>
+    <language>{{ site.Language.Lang }}</language>
+    {{- with $pages -}}
+    <lastBuildDate>{{ (index . 0).Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</lastBuildDate>
+    {{- end -}}
+    {{- with .OutputFormats.Get "rss" -}}
+    <atom:link href="{{ .Permalink }}" rel="self" type="application/rss+xml" />
+    {{- end -}}
+    {{- range $pages -}}
+    {{- $itemDesc := .Description -}}
+    {{- if not $itemDesc -}}
+      {{- $itemDesc = .Summary | plainify | truncate 280 -}}
+    {{- end -}}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      <description>{{ $itemDesc | html }}</description>
+    </item>
+    {{- end -}}
+  </channel>
+</rss>

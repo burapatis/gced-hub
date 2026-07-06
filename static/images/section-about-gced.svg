@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label=" 2#0-: B%A%0+1*7-@#5"#9I EIU/GCED">
+  <defs><clipPath id="sag"><rect width="360" height="220" rx="16"/></clipPath></defs>
+  <g clip-path="url(#sag)">
+    <rect width="360" height="220" fill="#DCEEFF"/>
+    <circle cx="300" cy="44" r="22" fill="#FAF7EF"/><circle cx="300" cy="44" r="14" fill="#D9A441" opacity="0.9"/>
+    <circle cx="128" cy="98" r="58" fill="#1E4E8C"/>
+    <circle cx="128" cy="98" r="58" fill="none" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="2"/>
+    <g fill="#5FA777">
+      <path d="M92 78q14-16 34-10t20 18q-6 12-22 10t-24-8q-10-6-8-10z"/>
+      <path d="M148 108q12-6 20 4t4 18q-10 8-18 4t-6-16q0-8 0-10z"/>
+    </g>
+    <g transform="translate(196 52)">
+      <rect width="120" height="96" rx="8" fill="#FAF7EF" stroke="#1E4E8C" stroke-width="3"/>
+      <path d="M60 8v80" stroke="#D9A441" stroke-width="3"/>
+      <g fill="#1E4E8C" opacity="0.85">
+        <rect x="18" y="24" width="30" height="4" rx="2"/><rect x="18" y="36" width="24" height="4" rx="2"/>
+        <rect x="72" y="24" width="30" height="4" rx="2"/><rect x="72" y="36" width="20" height="4" rx="2"/>
+        <rect x="18" y="56" width="28" height="4" rx="2"/><rect x="72" y="56" width="26" height="4" rx="2"/>
+      </g>
+      <path d="M42 78c0-4 6-6 7 0 1-6 7-4 7 0 0 4-7 8-7 8s-7-4-7-8z" fill="#E76F51"/>
+    </g>
+    <path d="M-8 178q90 28 188 14t188-8v44H-8z" fill="#5FA777"/>
+    <g transform="translate(248 150)">
+      <path d="M0 18q14-16 34-10-6 4-8 10 14-4 26 4-16 2-22 10t-20 8q-14 0-18-10 4-8 8-12z" fill="#FFFFFF"/>
+      <circle cx="5" cy="16" r="1.6" fill="#263238"/>
+    </g>
+  </g>
+</svg>

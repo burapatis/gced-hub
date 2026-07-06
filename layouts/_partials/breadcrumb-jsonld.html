@@ -1,0 +1,15 @@
+{{- /* JSON-LD BreadcrumbList — สอดคล้องกับ partial breadcrumb.html */ -}}
+{{- if not .IsHome -}}
+  {{- $crumbs := slice -}}
+  {{- $crumbs = $crumbs | append (dict "name" "หน้าแรก" "item" site.Home.Permalink) -}}
+  {{- if and .Parent (not .Parent.IsHome) -}}
+    {{- $crumbs = $crumbs | append (dict "name" .Parent.Title "item" .Parent.Permalink) -}}
+  {{- end -}}
+  {{- $crumbs = $crumbs | append (dict "name" .Title "item" .Permalink) -}}
+  {{- $elements := slice -}}
+  {{- range $i, $c := $crumbs -}}
+    {{- $elements = $elements | append (dict "@type" "ListItem" "position" (add $i 1) "name" $c.name "item" $c.item) -}}
+  {{- end -}}
+  {{- $data := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $elements -}}
+<script type="application/ld+json">{{ $data | jsonify | safeJS }}</script>
+{{- end -}}

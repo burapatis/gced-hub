@@ -18,6 +18,8 @@ main:
     url: "/community/"
   - name: "ข่าว/กิจกรรม"
     url: "/news/"
+  - name: "ค้นหา"
+    url: "/search/"
 
 # เมนูใน Footer — คอลัมน์ "เรียนรู้"
 footer_learn:

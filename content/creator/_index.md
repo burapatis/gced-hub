@@ -2,6 +2,8 @@
 title: "เกี่ยวกับผู้จัดทำเว็บไซต์"
 description: "ข้อมูลเกี่ยวกับผู้จัดทำเว็บไซต์ เข้าใจโลก เข้าใจคน และความตั้งใจในการส่งเสริม EIU/GCED เพื่อวัฒนธรรมแห่งสันติภาพ"
 date: 2026-07-03
+outputs:
+  - HTML
 ---
 
 เว็บไซต์ "เข้าใจโลก เข้าใจคน" จัดทำโดย **Boorapatis Ploysuwan** ด้วยความตั้งใจที่จะพัฒนาแหล่งเรียนรู้ด้าน Education for International Understanding (EIU), Global Citizenship Education (GCED) และ Culture of Peace ที่เข้าถึงง่าย ใช้ประโยชน์ได้จริง และเหมาะสมกับบริบทของสังคมไทย

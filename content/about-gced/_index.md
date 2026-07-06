@@ -1,6 +1,8 @@
 ---
 title: "เข้าใจ EIU/GCED"
 description: "ทำความรู้จัก Education for International Understanding (EIU), Global Citizenship Education (GCED) และวัฒนธรรมแห่งสันติภาพ พร้อมการเชื่อมโยงสู่บริบทไทยและ SDG 4.7"
+outputs:
+  - HTML
 ---
 
 ## EIU คืออะไร

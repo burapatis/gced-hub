@@ -1,0 +1,45 @@
+{{- /* ดัชนีค้นหาทั้งเว็บ — สร้างตอน build สำหรับหน้า /search/ */ -}}
+{{- $entries := slice -}}
+{{- range where site.Pages "Kind" "in" (slice "page" "section") -}}
+  {{- if and (not .IsHome) (ne .Section "search") (not .Params.searchExclude) -}}
+    {{- $sectionTitle := .Title -}}
+    {{- if not .IsSection -}}
+      {{- $sectionTitle = .Parent.Title -}}
+    {{- end -}}
+    {{- $kind := "บทความ" -}}
+    {{- if .IsSection -}}
+      {{- $kind = "หมวดหลัก" -}}
+    {{- else if eq .Section "classroom" -}}
+      {{- $kind = .Params.resource_type | default "แผนการสอน" -}}
+    {{- else if eq .Section "learn" -}}
+      {{- $kind = "บทเรียน" -}}
+    {{- else if eq .Section "policy" -}}
+      {{- $kind = "Policy Brief" -}}
+    {{- else if eq .Section "stories" -}}
+      {{- $kind = "เรื่องเล่า" -}}
+    {{- else if eq .Section "news" -}}
+      {{- $kind = "ข่าว/กิจกรรม" -}}
+    {{- end -}}
+    {{- $entries = $entries | append (dict
+        "title" .Title
+        "description" (.Description | default "")
+        "url" .RelPermalink
+        "section" .Section
+        "sectionTitle" $sectionTitle
+        "kind" $kind
+        "text" (.Plain | truncate 2000)) -}}
+  {{- end -}}
+{{- end -}}
+{{- range hugo.Data.resources.items -}}
+  {{- if eq .url "/resources/" -}}
+    {{- $entries = $entries | append (dict
+        "title" .title
+        "description" .description
+        "url" (partial "rel.html" .url)
+        "section" "resources"
+        "sectionTitle" "คลังทรัพยากร"
+        "kind" .type_label
+        "text" (printf "%s %s %s" .title .description .theme)) -}}
+  {{- end -}}
+{{- end -}}
+{{- $entries | jsonify | safeJS -}}

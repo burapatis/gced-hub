@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<div class="container page-list">
+  {{ partial "page-header.html" . }}
+
+  {{ with .Content }}<div class="prose">{{ . }}</div>{{ end }}
+
+  <section class="site-search" id="site-search"
+           aria-labelledby="site-search-heading"
+           data-index-url="{{ "search-index.json" | relURL }}">
+    <h2 id="site-search-heading" class="visually-hidden">ค้นหาเนื้อหา</h2>
+
+    <form class="search-form" id="site-search-form" role="search">
+      <div class="search-field">
+        <label for="site-search-input">คำค้น</label>
+        <input type="search" id="site-search-input" name="q"
+               placeholder="เช่น สันติภาพ, ข่าวปลอม, แผนการสอน, GCED"
+               autocomplete="off" enterkeyhint="search">
+      </div>
+      <button type="submit" class="btn btn-primary">ค้นหา</button>
+      <p class="search-status" id="site-search-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="search-results" id="site-search-results" hidden></div>
+    <p class="search-empty" id="site-search-empty" hidden>ไม่พบเนื้อหาที่ตรงกับคำค้น ลองใช้คำอื่นหรือคำที่สั้นลง</p>
+    <p class="search-hint" id="site-search-hint">พิมพ์คำค้นแล้วกด Enter หรือรอสักครู่เพื่อดูผลลัพธ์</p>
+  </section>
+</div>
+{{ end }}
