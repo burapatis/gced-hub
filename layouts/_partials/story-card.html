@@ -1,7 +1,7 @@
 {{- /* พารามิเตอร์: title, description, url, source (ไม่บังคับ), image (ไม่บังคับ) */ -}}
 {{- $img := .image | default "images/placeholder-story.svg" -}}
 <article class="card story-card">
-  <img class="card-img" src="{{ partial "rel.html" $img }}" alt="" width="320" height="180" loading="lazy">
+  <img class="card-img" src="{{ partial "rel.html" $img }}" alt="" width="1024" height="683" loading="lazy">
   <div class="card-body">
     {{ with .source }}<p class="card-badge badge-green">{{ . }}</p>{{ end }}
     <h3 class="card-title"><a href="{{ partial "rel.html" .url }}">{{ .title }}</a></h3>

@@ -3,7 +3,7 @@ title: "วงสนทนาที่เปลี่ยนห้องเรี
 description: "เรื่องเล่าจากโรงเรียน: เมื่อครูเปิดพื้นที่ให้นักเรียนที่เห็นต่างได้ฟังกันจริง ๆ บรรยากาศห้องเรียนก็ค่อย ๆ เปลี่ยนไป"
 date: 2026-04-01
 params:
-  image: "images/story-school-dialogue.svg"
+  image: "images/story-school-dialogue.jpg"
   source: "เรื่องเล่าจากโรงเรียน"
 ---
 

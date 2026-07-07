@@ -1,4 +1,4 @@
-{{- /* หัวข้อหน้ารายการหมวด — รองรับภาพประกอบ section-{slug}.svg */ -}}
+{{- /* หัวข้อหน้ารายการหมวด — รองรับภาพประกอบ section-{slug}.{jpg|png|svg} */ -}}
 {{- $page := . -}}
 {{- $class := "" -}}
 {{- $lede := "" -}}
@@ -10,10 +10,15 @@
 {{- $img := "" -}}
 {{- $alt := "" -}}
 {{- with $page.Section -}}
-  {{- $imgFile := printf "static/images/section-%s.svg" . -}}
-  {{- if fileExists $imgFile -}}
-    {{- $img = printf "images/section-%s.svg" . -}}
-    {{- $alt = $page.Params.image_alt | default (printf "ภาพประกอบ: %s" $page.Title) -}}
+  {{- range slice "jpg" "jpeg" "png" "webp" "svg" -}}
+    {{- if not $img -}}
+      {{- $ext := . -}}
+      {{- $imgFile := printf "static/images/section-%s.%s" $page.Section $ext -}}
+      {{- if fileExists $imgFile -}}
+        {{- $img = printf "images/section-%s.%s" $page.Section $ext -}}
+        {{- $alt = $page.Params.image_alt | default (printf "ภาพประกอบ: %s" $page.Title) -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 <header class="page-header{{ if $class }} {{ $class }}{{ end }}{{ if $img }} page-header--with-art{{ end }}">
@@ -34,7 +39,7 @@
   </div>
   {{- if $img -}}
   <div class="page-header-art">
-    <img src="{{ partial "rel.html" $img }}" alt="{{ $alt }}" width="360" height="220" decoding="async">
+    <img src="{{ partial "rel.html" $img }}" alt="{{ $alt }}" width="1024" height="683" decoding="async">
   </div>
   {{- end -}}
 </header>
