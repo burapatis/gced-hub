@@ -49,3 +49,5 @@ disableKinds = ["taxonomy", "term"]
 [services]
   [services.rss]
     limit = 20
+  [services.googleAnalytics]
+    ID = "G-M6M8Q5PBN2"
