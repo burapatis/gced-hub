@@ -19,6 +19,8 @@
       {{- $kind = "เรื่องเล่า" -}}
     {{- else if eq .Section "news" -}}
       {{- $kind = "ข่าว/กิจกรรม" -}}
+    {{- else if eq .Section "resources" -}}
+      {{- $kind = .Params.type_label | default "ทรัพยากร" -}}
     {{- end -}}
     {{- $entries = $entries | append (dict
         "title" .Title

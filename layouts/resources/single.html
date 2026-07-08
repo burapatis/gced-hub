@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<article class="container page-single">
+  <header class="page-header">
+  <p class="card-badge">{{ .Params.type_label }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-lede">{{ . }}</p>{{ end }}
+  </header>
+
+  <dl class="lesson-meta">
+    {{ with .Params.audience_label }}<div><dt>กลุ่มเป้าหมาย</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.level_label }}<div><dt>ระดับ</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.theme }}<div><dt>ประเด็น</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.format }}<div><dt>รูปแบบ</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.duration }}<div><dt>ระยะเวลาใช้งาน</dt><dd>{{ . }}</dd></div>{{ end }}
+    {{ with .Params.pages }}<div><dt>จำนวนหน้า</dt><dd>{{ . }}</dd></div>{{ end }}
+  </dl>
+
+  <p class="lesson-download">
+    <button type="button" class="btn btn-primary js-download-mock">{{ .Params.download_label | default "ดาวน์โหลดทรัพยากร (PDF)" }}</button>
+  </p>
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  <nav class="page-nav" aria-label="ทรัพยากรอื่น">
+    <a class="btn btn-ghost" href="{{ .Parent.RelPermalink }}">← กลับไปคลังทรัพยากร</a>
+  </nav>
+</article>
+{{ end }}

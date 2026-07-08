@@ -8,7 +8,7 @@ resources:
   - title: "คู่มือครู: เริ่มต้นสอน GCED ในห้องเรียนไทย"
     description: "แนวคิด หลักการออกแบบกิจกรรม และข้อควรระวังในการนำ GCED เข้าสู่ห้องเรียนไทย"
     type_label: "คู่มือครู"
-    url: "/resources/"
+    url: "/resources/gced-starter-guide/"
   - title: "Policy Brief: Whole-School Approach เพื่อวัฒนธรรมสันติภาพ"
     description: "แนวทางขับเคลื่อนทั้งโรงเรียนเพื่อสร้างวัฒนธรรมสันติภาพอย่างยั่งยืน"
     type_label: "Policy Brief"
